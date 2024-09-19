@@ -18,7 +18,7 @@ export KUBECONFIG=/etc/kubernetes/admin.conf
 echo "[TASK 3] Deploy Calico network"
 kubectl --kubeconfig=/etc/kubernetes/admin.conf create -f https://raw.githubusercontent.com/projectcalico/calico/v3.28.1/manifests/tigera-operator.yaml >/dev/null
 sleep 10
-kubectl --kubeconfig=/etc/kubernetes/admin.conf create -f curl https://raw.githubusercontent.com/projectcalico/calico/v3.28.1/manifests/calico.yaml
+kubectl --kubeconfig=/etc/kubernetes/admin.conf create -f https://raw.githubusercontent.com/projectcalico/calico/v3.28.1/manifests/calico.yaml
 sleep 10
 kubectl --kubeconfig=/etc/kubernetes/admin.conf create -f https://raw.githubusercontent.com/projectcalico/calico/v3.28.1/manifests/custom-resources.yaml >/dev/null
 
