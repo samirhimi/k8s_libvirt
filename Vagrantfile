@@ -24,8 +24,8 @@ Vagrant.configure("2") do |config|
     master.vm.synced_folder ".", "/vagrant", disabled: true
 	  master.vm.provision "shell", path: "master.sh"
     master.vm.provider "libvirt" do |libvirt|
-          libvirt.memory = 8192
-          libvirt.cpus = 4
+          libvirt.memory = 4096
+          libvirt.cpus = 2
       end
 	end
  
@@ -40,8 +40,8 @@ Vagrant.configure("2") do |config|
       node.vm.synced_folder ".", "/vagrant", disabled: true
 	    node.vm.provision "shell", path: "worker.sh"
       node.vm.provider "libvirt" do |libvirt|
-            libvirt.memory = 8192
-            libvirt.cpus = 2
+            libvirt.memory = 2048
+            libvirt.cpus = 1
         end                
     end
   end
