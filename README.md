@@ -58,5 +58,3 @@ vagrant plugin install vagrant-libvirt
 vagrant validate
 vagrant up
 ```
-
-
