@@ -20,7 +20,7 @@ kubectl --kubeconfig=/etc/kubernetes/admin.conf create -f https://raw.githubuser
 sleep 10
 kubectl --kubeconfig=/etc/kubernetes/admin.conf create -f curl https://raw.githubusercontent.com/projectcalico/calico/v3.28.1/manifests/calico.yaml
 sleep 10
-kubectl --kubeconfig=/etc/kubernetes/admin.conf create -f https://raw.githubusercontent.com/projectcalico/calico/vv3.28.1/manifests/custom-resources.yaml >/dev/null
+kubectl --kubeconfig=/etc/kubernetes/admin.conf create -f https://raw.githubusercontent.com/projectcalico/calico/v3.28.1/manifests/custom-resources.yaml >/dev/null
 
 echo "[TASK ] Deploy metric server"
 
@@ -43,3 +43,6 @@ sleep 10
 
 echo "[TASK 5] Generate and save cluster join command to /home/devops/joincluster.sh"
 kubeadm token create --print-join-command > /home/devops/joincluster.sh
+chown devops:devops /home/devops/joincluster.sh
+chmod +x /home/devops/joincluster.sh
+

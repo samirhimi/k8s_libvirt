@@ -41,7 +41,7 @@ Vagrant.configure("2") do |config|
 	    node.vm.provision "shell", path: "worker.sh"
       node.vm.provider "libvirt" do |libvirt|
             libvirt.memory = 8192
-            libvirt.cpus = 4
+            libvirt.cpus = 2
         end                
     end
   end
